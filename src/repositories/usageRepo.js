@@ -29,9 +29,9 @@ const finishUsage = (id) => {
 const listUsages = () => usages;
 
 const isVehicleInUse = (vehicleId) =>
-  usages.some(u => u.vehicleId === vehicleId && !u.endDate);
+  usages.some(u => u.vehicleId == vehicleId && !u.endDate);
 
 const isDriverUsingVehicle = (driverId) =>
-  usages.some(u => u.driverId === driverId && !u.endDate);
+  usages.some(u => u.driverId == driverId && !u.endDate);
 
 module.exports = { startUsage, finishUsage, listUsages, isVehicleInUse, isDriverUsingVehicle };

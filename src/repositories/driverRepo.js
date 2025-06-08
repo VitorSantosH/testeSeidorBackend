@@ -1,12 +1,12 @@
 const drivers = []; // armazenamento em memória
 
 const getDriverById = (id) => {
-    return drivers.find(driver => driver.id === id);
+    return drivers.find(driver => driver.id == id);
 };
 
 const isDriverUsingVehicle = (driverId) => {
     const usage = require('../services/usageService').getUsages();
-    return usage.some(u => u.driverId === driverId && !u.endDate);
+    return usage.some(u => u.driverId == driverId && !u.endDate);
 };
 
 const addDriver = (driver) => {
@@ -16,13 +16,13 @@ const addDriver = (driver) => {
 };
 
 const updateDriver = (id, data) => {
-    const driver = drivers.find(d => d.id === parseInt(id));
+    const driver = drivers.find(d => d.id == parseInt(id));
     if (driver) Object.assign(driver, data);
     return driver;
 };
 
 const deleteDriver = (id) => {
-    const index = drivers.findIndex(d => d.id === parseInt(id));
+    const index = drivers.findIndex(d => d.id == parseInt(id));
     if (index !== -1) drivers.splice(index, 1);
 };
 

@@ -57,6 +57,27 @@
         "responses": { "204": { "description": "Veículo excluído" } }
       }
     },
+      "/vehicles/color/{cor}": {
+      "get": {
+        "summary": "Buscar veículo por cor",
+        "parameters": [{ "name": "cor", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "Veículo encontrado" } }
+      }
+    },
+    "/vehicles/marca/{brand}": {
+      "get": {
+        "summary": "Buscar veículo por brand",
+        "parameters": [{ "name": "brand", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "Veículo encontrado" } }
+      }
+    },
+      "/vehicles/pesquisa/{query}": {
+      "get": {
+        "summary": "Buscar veículo de uma maneira mais generica",
+        "parameters": [{ "name": "query", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "Veículo encontrado" } }
+      }
+    },
     "/drivers": {
       "get": {
         "summary": "Listar motoristas",

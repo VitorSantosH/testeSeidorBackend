@@ -1,0 +1,68 @@
+PASSO A PASSO - Instalação e Execução do Projeto Backend
+
+============================
+1. INSTALAR NODE.JS E NPM
+============================
+Acesse https://nodejs.org/
+- Baixe e instale a versão LTS do Node.js
+- Confirme no terminal:
+  node -v
+  npm -v
+
+============================
+2. CLONAR O PROJETO DO GITHUB
+============================
+Exemplo:
+  git clone https://github.com/seu-usuario/seu-repositorio.git
+  cd seu-repositorio
+
+============================
+3. INSTALAR DEPENDÊNCIAS NODE.JS
+============================
+Execute:
+  npm install
+
+============================
+4. INICIAR A APLICAÇÃO
+============================
+Para rodar o servidor local:
+  node index.js
+
+============================
+5. ACESSAR A DOCUMENTAÇÃO SWAGGER
+============================
+Abra no navegador:
+  http://localhost:3000/api-docs
+
+============================
+6. EXECUTAR TESTES AUTOMATIZADOS (JEST)
+============================
+Execute:
+  npm test
+
+=========================================================
+OPCIONAL: TESTAR OS ENDPOINTS COM UM SCRIPT EM PYTHON
+=========================================================
+
+============================
+7. INSTALAR PYTHON E PIP
+============================
+Acesse https://www.python.org/downloads/
+- Instale o Python
+- Marque a opção "Add Python to PATH" durante a instalação
+- Verifique no terminal:
+  python --version
+  pip --version
+
+============================
+8. INSTALAR DEPENDÊNCIA 'requests'
+============================
+Execute:
+  pip install requests
+
+============================
+9. EXECUTAR O SCRIPT DE TESTE DE API
+============================
+Execute:
+  python test_api.py
+

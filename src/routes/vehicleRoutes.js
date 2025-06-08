@@ -12,6 +12,24 @@ router.get('/:id', (req, res) => {
     return res.json(vehicle);
 }
 );
+router.get('/color/:cor', (req, res) => {
+    var vehicle = repo.getVehicleByColor(req.params.cor);
+    console.log(vehicle);
+    return res.json(vehicle);
+})
+
+router.get('/marca/:brand', (req, res) => {
+    var vehicle = repo.getVehicleBybrand(req.params.brand);
+    console.log(vehicle);
+    return res.json(vehicle);
+})
+
+router.get('/pesquisa/:query', (req, res) => {
+    var vehicle = repo.pesquisa(req.params.query);
+    console.log(vehicle);
+    return res.json(vehicle);
+})
+
 router.get('/', (req, res) => res.json(repo.listVehicles(req.query)));
 
 module.exports = router;
