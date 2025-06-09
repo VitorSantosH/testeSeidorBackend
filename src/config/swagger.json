@@ -10,10 +10,26 @@
       "get": {
         "summary": "Listar veículos",
         "parameters": [
-          { "name": "color", "in": "query", "schema": { "type": "string" } },
-          { "name": "brand", "in": "query", "schema": { "type": "string" } }
+          {
+            "name": "color",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "brand",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
-        "responses": { "200": { "description": "Lista de veículos" } }
+        "responses": {
+          "200": {
+            "description": "Lista de veículos"
+          }
+        }
       },
       "post": {
         "summary": "Cadastrar veículo",
@@ -24,67 +40,191 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "plate": { "type": "string" },
-                  "color": { "type": "string" },
-                  "brand": { "type": "string" }
+                  "plate": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "brand": {
+                    "type": "string"
+                  }
                 },
-                "required": ["plate", "color", "brand"]
+                "required": [
+                  "plate",
+                  "color",
+                  "brand"
+                ]
               }
             }
           }
         },
-        "responses": { "200": { "description": "Veículo cadastrado" } }
+        "responses": {
+          "200": {
+            "description": "Veículo cadastrado"
+          }
+        }
       }
     },
     "/vehicles/{id}": {
       "get": {
         "summary": "Buscar veículo por ID",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
-        "responses": { "200": { "description": "Veículo encontrado" } }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Veículo encontrado"
+          }
+        }
       },
       "put": {
         "summary": "Atualizar veículo",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "requestBody": {
           "required": true,
-          "content": { "application/json": { "schema": { "type": "object" } } }
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plate": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "brand": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "plate",
+                  "color",
+                  "brand"
+                ]
+              }
+            }
+          }
         },
-        "responses": { "200": { "description": "Veículo atualizado" } }
+        "responses": {
+          "200": {
+            "description": "Veículo atualizado"
+          }
+        }
       },
       "delete": {
         "summary": "Excluir veículo",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
-        "responses": { "204": { "description": "Veículo excluído" } }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Veículo excluído"
+          }
+        }
       }
     },
-      "/vehicles/color/{cor}": {
+    "/vehicles/color/{cor}": {
       "get": {
         "summary": "Buscar veículo por cor",
-        "parameters": [{ "name": "cor", "in": "path", "required": true, "schema": { "type": "string" } }],
-        "responses": { "200": { "description": "Veículo encontrado" } }
+        "parameters": [
+          {
+            "name": "cor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Veículo encontrado"
+          }
+        }
       }
     },
     "/vehicles/marca/{brand}": {
       "get": {
         "summary": "Buscar veículo por brand",
-        "parameters": [{ "name": "brand", "in": "path", "required": true, "schema": { "type": "string" } }],
-        "responses": { "200": { "description": "Veículo encontrado" } }
+        "parameters": [
+          {
+            "name": "brand",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Veículo encontrado"
+          }
+        }
       }
     },
-      "/vehicles/pesquisa/{query}": {
+    "/vehicles/pesquisa/{query}": {
       "get": {
         "summary": "Buscar veículo de uma maneira mais generica",
-        "parameters": [{ "name": "query", "in": "path", "required": true, "schema": { "type": "string" } }],
-        "responses": { "200": { "description": "Veículo encontrado" } }
+        "parameters": [
+          {
+            "name": "query",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Veículo encontrado"
+          }
+        }
       }
     },
     "/drivers": {
       "get": {
         "summary": "Listar motoristas",
         "parameters": [
-          { "name": "name", "in": "query", "schema": { "type": "string" } }
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
-        "responses": { "200": { "description": "Lista de motoristas" } }
+        "responses": {
+          "200": {
+            "description": "Lista de motoristas"
+          }
+        }
       },
       "post": {
         "summary": "Cadastrar motorista",
@@ -95,41 +235,126 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "name": { "type": "string" }
+                  "name": {
+                    "type": "string"
+                  }
                 },
-                "required": ["name"]
+                "required": [
+                  "name"
+                ]
               }
             }
           }
         },
-        "responses": { "200": { "description": "Motorista cadastrado" } }
+        "responses": {
+          "200": {
+            "description": "Motorista cadastrado"
+          }
+        }
       }
     },
     "/drivers/{id}": {
       "get": {
         "summary": "Buscar motorista por ID",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
-        "responses": { "200": { "description": "Motorista encontrado" } }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Motorista encontrado"
+          }
+        }
       },
       "put": {
         "summary": "Atualizar motorista",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "requestBody": {
           "required": true,
-          "content": { "application/json": { "schema": { "type": "object" } } }
+          "content": {
+            "application/json": {
+               "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
         },
-        "responses": { "200": { "description": "Motorista atualizado" } }
+        "responses": {
+          "200": {
+            "description": "Motorista atualizado"
+          }
+        }
       },
       "delete": {
         "summary": "Excluir motorista",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
-        "responses": { "204": { "description": "Motorista excluído" } }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Motorista excluído"
+          }
+        }
+      }
+    },
+    "/drivers/name/{nome}": {
+      "get": {
+        "summary": "Buscar veículo por nome",
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Veículo encontrado"
+          }
+        }
       }
     },
     "/usages": {
       "get": {
         "summary": "Listar utilizações",
-        "responses": { "200": { "description": "Lista de utilizações de veículos" } }
+        "responses": {
+          "200": {
+            "description": "Lista de utilizações de veículos"
+          }
+        }
       },
       "post": {
         "summary": "Registrar uso de veículo",
@@ -140,28 +365,55 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "vehicleId": { "type": "integer" },
-                  "driverId": { "type": "integer" },
-                  "reason": { "type": "string" }
+                  "vehicleId": {
+                    "type": "integer"
+                  },
+                  "driverId": {
+                    "type": "integer"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
                 },
-                "required": ["vehicleId", "driverId", "reason"]
+                "required": [
+                  "vehicleId",
+                  "driverId",
+                  "reason"
+                ]
               }
             }
           }
         },
         "responses": {
-          "201": { "description": "Uso registrado com sucesso" },
-          "400": { "description": "Veículo ou motorista indisponível" }
+          "201": {
+            "description": "Uso registrado com sucesso"
+          },
+          "400": {
+            "description": "Veículo ou motorista indisponível"
+          }
         }
       }
     },
     "/usages/{id}/finalizar": {
       "patch": {
         "summary": "Finalizar uso de veículo",
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
-          "200": { "description": "Uso finalizado" },
-          "400": { "description": "Erro ao finalizar uso" }
+          "200": {
+            "description": "Uso finalizado"
+          },
+          "400": {
+            "description": "Erro ao finalizar uso"
+          }
         }
       }
     }

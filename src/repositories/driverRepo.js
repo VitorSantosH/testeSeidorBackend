@@ -4,6 +4,10 @@ const getDriverById = (id) => {
     return drivers.find(driver => driver.id == id);
 };
 
+const getDriverByName = (name) => {
+    return drivers.find(driver => driver.name.toLowerCase() == name.toLowerCase());
+};
+
 const isDriverUsingVehicle = (driverId) => {
     const usage = require('../services/usageService').getUsages();
     return usage.some(u => u.driverId == driverId && !u.endDate);
@@ -40,6 +44,7 @@ module.exports = {
     updateDriver,
     deleteDriver,
     getDriverById,
-    listDrivers
+    listDrivers,
+    getDriverByName
 
 };

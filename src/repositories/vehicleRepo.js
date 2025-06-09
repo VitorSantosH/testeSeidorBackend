@@ -39,6 +39,7 @@ const addVehicle = (vehicle) => {
 };
 
 const updateVehicle = (id, data) => {
+    console.log(data)
     const vehicle = vehicles.find(v => v.id == parseInt(id));
     if (vehicle) Object.assign(vehicle, data);
     return vehicle;
